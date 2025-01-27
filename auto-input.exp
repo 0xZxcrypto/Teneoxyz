@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+cd /home/hg680p/Teneoxyz
+spawn pm2 start index.js --name "TENEO"
+expect "Do you want to use a proxy? (y/n):"
+send "n\r"
+expect "Do you want to enable auto-retry for account errors? (y/n):"
+send "y\r"
+expect eof
+
