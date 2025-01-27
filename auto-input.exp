@@ -1,11 +1,10 @@
 #!/usr/bin/expect
 cd /home/hg680p/Teneoxyz
 
-# Mulai proses dengan pm2
+# Jalankan pm2 start sekali
 spawn pm2 start index.js --name "TENEO" -f
-sleep 2
 
-# Tangani prompt pertama
+# Tangani prompt secara berurutan
 expect {
     "Do you want to use a proxy? (y/n):" {
         send "n\r"
@@ -17,5 +16,4 @@ expect {
 }
 
 # Tunggu proses selesai
-sleep 2
 expect eof
