@@ -1,19 +1,12 @@
 #!/usr/bin/expect
-cd /home/hg680p/Teneoxyz
-
-# Jalankan pm2 start sekali
+# Memulai proses hanya jika belum berjalan
 spawn pm2 start index.js --name "TENEO" -f
-
-# Tangani prompt secara berurutan
 expect {
     "Do you want to use a proxy? (y/n):" {
         send "n\r"
-        exp_continue
     }
     "Do you want to enable auto-retry for account errors? (y/n):" {
         send "y\r"
     }
 }
-
-# Tunggu proses selesai
 expect eof
