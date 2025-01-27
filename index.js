@@ -132,8 +132,8 @@ function displayHeader() {
   const width = process.stdout.columns;
   const headerLines = [
     "<|============================================|>",
-    "                  Teneo Bot                   ",
-    "          github.com/recitativonika           ",
+    "                Teneo Bot NEW                   ",
+    "     https://github.com/0xZxcrypto/Teneoxyz     ",
     "<|============================================|>"
   ];
 
