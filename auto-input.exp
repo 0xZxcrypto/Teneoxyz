@@ -1,12 +1,17 @@
-#!/usr/bin/expect
-# Memulai proses hanya jika belum berjalan
-spawn pm2 start index.js --name "TENEO" -f
+#!/usr/bin/expect -f
+
+# Menjalankan perintah pm2
+spawn pm2 start index.js --name TENEO -f
+
+# Menunggu prompt dan otomatis memberikan respons
 expect {
     "Do you want to use a proxy? (y/n):" {
-        send "n\r"
+        send "n\r"  ;# Mengirimkan 'y' jika prompt muncul
+        exp_continue  ;# Melanjutkan untuk menangani prompt berikutnya
     }
     "Do you want to enable auto-retry for account errors? (y/n):" {
-        send "y\r"
+        send "y\r"  ;# Mengirimkan 'y' jika prompt muncul
+        exp_continue  ;# Melanjutkan untuk menangani prompt berikutnya
     }
+    eof
 }
-expect eof
