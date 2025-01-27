@@ -1,1 +1,8 @@
-
+#!/usr/bin/expect -f
+set timeout -1
+spawn node index.js
+expect "Do you want to use a proxy? (y/n):"
+send "n\r"
+expect "Do you want to enable auto-retry for account errors? (y/n):"
+send "y\r"
+interact
