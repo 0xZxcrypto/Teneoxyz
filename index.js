@@ -21,7 +21,7 @@ let proxies = [];
 let accessTokens = [];
 let accounts = [];
 let useProxy = false;
-let enableAutoRetry = true;
+let enableAutoRetry = false;
 let currentAccountIndex = 0;
 
 function loadAccounts() {
